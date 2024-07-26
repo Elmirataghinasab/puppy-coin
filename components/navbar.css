@@ -1,0 +1,57 @@
+*{
+    margin-top: 0px;
+}
+
+
+.nav-container{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    height:5rem;
+    width: 100%;
+    padding-bottom: 1.5rem;
+    z-index: 10;
+    background-color: rgba(72, 51, 10, 0.625);
+    margin-top: 0;
+    top: 0;
+    color: white;
+    left: 0;
+    
+    
+}
+.socialMediaBut{
+    border-radius: 999px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    margin: auto 5px;
+    margin-top: 0.5rem;
+    
+    
+    
+}
+.left{
+    justify-content: space-between;
+    display: flex;
+}
+.right{
+    justify-content: space-between;
+    display: flex;
+    margin-left: 10px;
+}
+.logo{
+    width: 90px;
+    padding-right: 10px;
+}
+.token-name{
+    padding-top: 1.6rem;
+    font-size: 30px;
+}
+.discord{
+    margin-right: 30px;
+}
+.dark-nav{
+    transition: 0.25s;
+    background-color: rgb(63, 45, 9);
+}
