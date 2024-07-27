@@ -73,7 +73,7 @@ h1{
     margin-top: 20px;
     margin-bottom: 30px;
     color: white;
-    background:-moz-linear-gradient(rgba(72, 51, 10, 0.625),rgba(72, 51, 10, 0.625));
+    background: rgba(72, 51, 10, 0.625);
     border-top: tan;
     border: none;
   }
