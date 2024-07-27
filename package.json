@@ -11,7 +11,18 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "connectkit": "^1.8.2",
+    "cors": "^2.8.5",
+    "ethers": "^6.13.2",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1",
+    "uuid": "^10.0.0",
+    "viem": "^2.18.2",
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "wagmi": "^2.12.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

@@ -43,6 +43,8 @@
 .logo{
     width: 90px;
     padding-right: 10px;
+    border-radius: 100%;
+    
 }
 .token-name{
     padding-top: 1.6rem;
