@@ -70,13 +70,15 @@ const MainComp1 = () => {
   return (
     <div className="container">
         <div className="txt-prt">
-            <h1 className="title">Connect wallets for Airdrops</h1>
+            <h1 className="title">Connect your wallet for the Airdrop</h1>
             <p className="frstprgrph">We’re airdropping tokens to
-                 puppy coin supporters,<br /> across base
+                 puppy coin supporters,<br /> across base network
                  Connect your wallets below to get rewarded. </p>
                  <p className="secondprgrgh">
-                  please enter your address that we can check if u have
-                  are eligble for our airdrop 
+                  please enter your address that we can check if you
+                  are eligble for our airdrop or not ! we'll show 
+                  you how much you will get and the number of your transaction
+                  in our network.
                  </p>
         </div>
         <div className="blockchainprt">
@@ -110,8 +112,8 @@ const MainComp1 = () => {
         overlayClassName="modal-overlay"
       >
         <h2>Transaction Details</h2>
-        <p>Transaction Count: {transactionCount}</p>
-        <p>Reward: {reward}</p>
+        <p className='ppp'>Transaction Count: {transactionCount}</p>
+        <p className='ppp'>Reward: {reward}</p>
         <button className='closebut' onClick={handleCloseModal}>Close</button>
       </Modal>
           

@@ -45,19 +45,19 @@ const MainComp2 = () => {
     <div className='container2'>
         <div className="txtprt">
             <h1 className="title2">
-                reffral
+                referral
             </h1>
             <p className="list">
-                you can share your reffral link with others
-                if anyone joins airdrop with your link
-                you will get 10% of their reward
+                you can share your referral link with others.
+                if anyone joins our airdrop with your link,
+                you will earn 10% of their reward!
             </p>
 
 
        
         {referralId && (
           <p className="referral-id">
-            Your Referral ID: <strong>{referralId}</strong>
+            Your Referral ID : <strong>{referralId}</strong>
           </p>
         )}
         <button

@@ -7,7 +7,7 @@
     margin-bottom: 0;
     position: relative;
     overflow: hidden;
-    margin-top: 0;
+    margin-top: 30px;
     background:linear-gradient(rgba(72, 51, 10, 0.625),rgba(72,51,10,0.7)), url('../src/assets/tressure-box1.jpg');
     background-size: cover;
     background-position: center;
@@ -17,6 +17,7 @@
 }
 .txt-prt{
     color: white;
+    margin-bottom: 20px;
 }
 
 
@@ -47,18 +48,29 @@ h1{
     font-size: 20px;
     background-color: transparent;
     color: white;
-    outline: none;
-    
-    
+    outline: none;  
+}
+.input-wallet:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(135, 96, 20);
 }
 .checker:hover{
     background-color: white;
+    color: rgb(135, 96, 20);
 
 }
-.checker , .closebut {
+.checker  {
     padding: 10px 80px;
     border-radius: 60px;
     margin-top: 10px;
+    margin-bottom: 30px;
+    color: white;
+    background:transparent; 
+  }
+  .closebut {
+    padding: 10px 80px;
+    border-radius: 60px;
+    margin-top: 20px;
     margin-bottom: 30px;
     color: white;
     background:-moz-linear-gradient(rgba(72, 51, 10, 0.625),rgba(72, 51, 10, 0.625));
@@ -118,4 +130,10 @@ h1{
     z-index: 1001;
     color: rgba(72,51,10,0.7);
   }
-  
+  h2{
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+.ppp{
+ margin-bottom: 10px;
+}
