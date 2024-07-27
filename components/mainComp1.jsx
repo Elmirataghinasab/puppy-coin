@@ -3,11 +3,49 @@ import "./mainComp1.css"
 import "./spinner.css"
 import { useEffect } from 'react'
 import { useState } from 'react'
+import {
+  getTransactionCount,
+  getRewardRange,
+} from "../backend/getTransactionCount";
+import Popup from 'reactjs-popup'
+
 
 const MainComp1 = () => {
   
+  const [evmAddress, setEvmAddress] = useState("");
+  const [loading, setLoading] = useState(false);
+  const[transactionCount,setTransactionCount]=useState(``);
+  const[reward,setReward]=useState(``);
 
-  const [isLoading, setIsLoading] = useState(false);
+  
+  
+
+  
+
+
+  const handleInputChange = (event) => {
+    setEvmAddress(event.target.value);
+  };
+
+  const handleCheckClick = async () => {
+    setLoading(true);
+    try {
+        setTransactionCount(await getTransactionCount(evmAddress));
+        setReward(await getRewardRange(transactionCount));
+      console.log(reward,transactionCount)
+      /*alert(`Transaction Count: ${transactionCount}\nReward: ${reward}`);*/
+      
+    } catch (error) {
+      console.error("Error fetching transaction count:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+
+
+/*  const [isLoading, setIsLoading] = useState(false);
   
     const handleClick = async () => {
       setIsLoading(true);
@@ -17,10 +55,11 @@ const MainComp1 = () => {
   
       setIsLoading(false);
       alert('Process completed!');
-    };
+    };*/
 
   return (
     <div className="container">
+        
         <div className="txt-prt">
             <h1 className="title">Connect wallets for Airdrops</h1>
             <p className="frstprgrph">We’re airdropping tokens to
@@ -32,16 +71,42 @@ const MainComp1 = () => {
                  </p>
         </div>
         <div className="blockchainprt">
-        <input placeholder='Please enter your wallet address...' 
+        <input placeholder='Please enter your EVM address...' 
         className='input-wallet'
-         type="text" />
-         <input type="text" className="input-wallet"
-         placeholder='Please enter your reffral ID(optional)' />
+         type="text"  value={evmAddress}
+         onChange={handleInputChange}/>
+         
           </div>
+          
 
-          <button onClick={handleClick} disabled={isLoading} className="loading-button">
-        {isLoading ? <div className="spinner"></div> : 'Click Me'}
-      </button>
+          <Popup trigger={
+            <button className='checker' onClick={handleCheckClick}
+            disabled={loading}
+          >
+            {loading ? (
+              
+                <span className="loading-icon"></span>
+              
+            ) : (
+              "Check"
+            )}
+        </button>
+          } modal nested>
+          {close =>(<div className="modal">
+
+          
+            Transaction Count: {transactionCount} <br />
+            Reward: <br /> <br />
+            {reward}
+
+            <button className="checker" onClick={()=>close()}>
+              close 
+            </button>
+          </div>)}
+          </Popup>
+          
+          
+      
     </div>
   )
 }

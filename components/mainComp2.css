@@ -8,18 +8,18 @@
     flex-direction: column;
     align-items: center;
     padding: 50px;
-    padding-bottom: 0;
-    margin: 50px;
+    padding-bottom: 30px;
     margin-bottom: 0;
     position: relative;
     overflow: hidden;
     margin-top: 0;
-    
+    text-align: center;
+    width: 100%;
 }
 
 
 .list{
-    max-width: 450px;
+    padding:10px 40px;
     text-align: center;
 }
 .rfrlbtn{
@@ -31,4 +31,21 @@
 }
 .txtprt{
     margin-bottom: 100px ;
+    text-align: center;
+}
+
+.referral-id{  
+  background: rgba(72, 51, 10, 0.625); ;
+  color: white;
+  margin: 1rem;
+  border-radius: 10px;
+  padding: 10px 5%;
+  font-size: 20px;
+}
+.referral-id>:nth-child(1){
+    font-size: 25px;
+    
+}
+.checker{
+    margin-top: 0.5rem;
 }
