@@ -50,7 +50,7 @@ h1{
     background-color: white;
     color: black;
 }
-.checker {
+.checker , .closebut {
     padding: 10px 80px;
     border-radius: 60px;
     margin-top: 10px;
@@ -84,8 +84,32 @@ h1{
     flex-direction: column ;
     text-align: center;
     color: white;
-    border-radius: 100%;
+    border-radius: 999px;
     padding: 100px;
     
 
   }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(46, 46, 46, 0.553);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+  }
+  
+  .modal-content {
+    background: rgba(255, 255, 255, 0.864);
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    color: rgba(72,51,10,0.7);
+  }
+  

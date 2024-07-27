@@ -8,6 +8,11 @@ import {
   getRewardRange,
 } from "../backend/getTransactionCount";
 import Popup from 'reactjs-popup'
+import Modal from 'react-modal'
+
+Modal.setAppElement("#root");
+
+
 
 
 const MainComp1 = () => {
@@ -16,7 +21,8 @@ const MainComp1 = () => {
   const [loading, setLoading] = useState(false);
   const[transactionCount,setTransactionCount]=useState(``);
   const[reward,setReward]=useState(``);
-
+  const [showModal, setShowModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false)
   
   
 
@@ -30,16 +36,20 @@ const MainComp1 = () => {
   const handleCheckClick = async () => {
     setLoading(true);
     try {
-        setTransactionCount(await getTransactionCount(evmAddress));
-        setReward(await getRewardRange(transactionCount));
-      console.log(reward,transactionCount)
-      /*alert(`Transaction Count: ${transactionCount}\nReward: ${reward}`);*/
-      
+      const count = await getTransactionCount(evmAddress);
+      const rewardValue = await getRewardRange(count);
+      setTransactionCount(count);
+      setReward(rewardValue);
+      setIsModalOpen(true);
     } catch (error) {
       console.error("Error fetching transaction count:", error);
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
 
@@ -59,7 +69,6 @@ const MainComp1 = () => {
 
   return (
     <div className="container">
-        
         <div className="txt-prt">
             <h1 className="title">Connect wallets for Airdrops</h1>
             <p className="frstprgrph">We’re airdropping tokens to
@@ -79,32 +88,32 @@ const MainComp1 = () => {
           </div>
           
 
-          <Popup trigger={
-            <button className='checker' onClick={handleCheckClick}
-            disabled={loading}
-          >
-            {loading ? (
-              
-                <span className="loading-icon"></span>
-              
-            ) : (
-              "Check"
-            )}
+          <button
+          className="checker"
+          onClick={handleCheckClick}
+          disabled={loading}
+        >
+          {loading ? (
+            <>
+              <span className="loading-icon"></span>
+            </>
+          ) : (
+            "Check"
+          )}
         </button>
-          } modal nested>
-          {close =>(<div className="modal">
-
-          
-            Transaction Count: {transactionCount} <br />
-            Reward: <br /> <br />
-            {reward}
-
-            <button className="checker" onClick={()=>close()}>
-              close 
-            </button>
-          </div>)}
-          </Popup>
-          
+       
+        <Modal
+        isOpen={isModalOpen}
+        onRequestClose={handleCloseModal}
+        contentLabel="Transaction Details"
+        className="modal-content"
+        overlayClassName="modal-overlay"
+      >
+        <h2>Transaction Details</h2>
+        <p>Transaction Count: {transactionCount}</p>
+        <p>Reward: {reward}</p>
+        <button className='closebut' onClick={handleCloseModal}>Close</button>
+      </Modal>
           
       
     </div>
