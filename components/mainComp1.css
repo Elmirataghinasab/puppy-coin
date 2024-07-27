@@ -8,7 +8,7 @@
     position: relative;
     overflow: hidden;
     margin-top: 30px;
-    background:linear-gradient(rgba(72, 51, 10, 0.625),rgba(72,51,10,0.7)), url('../src/assets/tressure-box1.jpg');
+    background:linear-gradient(rgba(72, 51, 10, 0.625),rgba(72,51,10,0.7)), url('../public/tressure-box1.jpg');
     background-size: cover;
     background-position: center;
     top: 3.5rem;

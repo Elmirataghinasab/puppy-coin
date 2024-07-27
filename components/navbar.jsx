@@ -14,18 +14,18 @@ const Navbar = () => {
   return (
     <section className={`nav-container  ${ sticky ? "dark-nav" :''}`}>
         <div className="right">
-            <img src="../src/assets/logo.png" alt="logo" className="logo" />
+            <img src="./logo.png" alt="logo" className="logo" />
             <span className="token-name">Puppy Coin</span>
         </div>
         <div className="left">
             <button className="socialMediaBut">
-                <img src="../src/assets/twitter.svg" alt="twitter" />
+                <img src="./twitter.svg" alt="twitter" />
             </button>
             <button className="socialMediaBut">
-                <img src="../src/assets/telegram.svg" alt="telegram" />
+                <img src="./telegram.svg" alt="telegram" />
             </button>
             <button className="socialMediaBut discord">
-            <img src="../src/assets/discord.svg" alt="discord" />
+            <img src="./discord.svg" alt="discord" />
             </button>
         </div>
     </section>
